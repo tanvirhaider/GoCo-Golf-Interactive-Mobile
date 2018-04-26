@@ -55,17 +55,6 @@
 		"oT": 1,
 		"q": 100
 		},
-	"\/app\/assets\/images\/dos.jpg": {
-		"ft": 16384,
-		"iS": 189410,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "\/build\/assets\/images\/dos.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 1,
-		"q": 100
-		},
 	"\/app\/assets\/images\/hs.png": {
 		"ft": 32768,
 		"iS": 6424,
@@ -77,34 +66,45 @@
 		"oT": 1,
 		"q": 100
 		},
-	"\/app\/assets\/images\/quatro.jpg": {
+	"\/app\/assets\/images\/Mdos.jpg": {
 		"ft": 16384,
-		"iS": 232467,
+		"iS": 108377,
 		"jF": 0,
 		"oA": 0,
-		"oAP": "\/build\/assets\/images\/quatro.jpg",
+		"oAP": "\/build\/assets\/images\/Mdos.jpg",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 1,
 		"q": 100
 		},
-	"\/app\/assets\/images\/tres.jpg": {
+	"\/app\/assets\/images\/Mquatro.jpg": {
 		"ft": 16384,
-		"iS": 193390,
+		"iS": 193454,
 		"jF": 0,
 		"oA": 0,
-		"oAP": "\/build\/assets\/images\/tres.jpg",
+		"oAP": "\/build\/assets\/images\/Mquatro.jpg",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 1,
 		"q": 100
 		},
-	"\/app\/assets\/images\/uno.jpg": {
+	"\/app\/assets\/images\/Mtres.jpg": {
 		"ft": 16384,
-		"iS": 181291,
+		"iS": 162332,
 		"jF": 0,
 		"oA": 0,
-		"oAP": "\/build\/assets\/images\/uno.jpg",
+		"oAP": "\/build\/assets\/images\/Mtres.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
+		"q": 100
+		},
+	"\/app\/assets\/images\/Muno.jpg": {
+		"ft": 16384,
+		"iS": 104916,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "\/build\/assets\/images\/Muno.jpg",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 1,
@@ -122,12 +122,12 @@
 		"ma": 0,
 		"mi": 0,
 		"oA": 0,
-		"oAP": "\/build\/js\/app-min.js",
-		"oF": 0,
+		"oAP": "\/build\/js\/app-mobile.js",
+		"oF": 2,
 		"sC": 3,
 		"tS": 0
 		},
-	"\/app\/js\/data.js": {
+	"\/app\/js\/m-data.js": {
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
@@ -150,7 +150,7 @@
 		"oS": 0,
 		"uL": 1
 		},
-	"\/app\/scss\/main.scss": {
+	"\/app\/scss\/main-mobile.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
@@ -158,7 +158,7 @@
 		"ft": 4,
 		"ma": 0,
 		"oA": 0,
-		"oAP": "\/build\/css\/main.css",
+		"oAP": "\/build\/css\/main-mobile.css",
 		"oF": 2,
 		"oS": 0,
 		"uL": 1

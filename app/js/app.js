@@ -1,5 +1,5 @@
 
-// @codekit-prepend "data.js"
+// @codekit-prepend "m-data.js"
 
 /*
   Willow Studios Inc.
@@ -17,7 +17,7 @@
                                     :21|  |. .|  |  |  |:     747                                   
                                     :MM.  |. .|  |  |  O: .|  NM|                                   
                              .......|MM.  |. .|  |  |  |: .|  NMy.......                            
-                          .|aftereffects  |. .|  |  |  |:  |  CanvasAnima||                         
+                          .|aftereffects  |. .|  |  |  |:  |  McanvasAnima||                         
                         .|CREATOR|::|::|. |. .|  |  |  |;  |  |  .||S|:GREAT.                       
                         |MN: .  || .|  0. |. .|  |  |  |#  |  |. |: .|   .dMd                       
                         NM|  0. :|  |  |  |. .|  |  |  |C  |  |  /| .|    :MM|                      
@@ -49,26 +49,26 @@
 */
 
 
-var selectedHS = undefined;
-var imgList = [["./assets/images/uno.jpg",uno],["./assets/images/dos.jpg",dos],["./assets/images/tres.jpg",tres],["./assets/images/quatro.jpg",quatro]];
-
+var MselectedHS = undefined;
+var mImgList = [["./assets/images/Muno.jpg",Muno],["./assets/images/Mdos.jpg",Mdos],["./assets/images/Mtres.jpg",Mtres],["./assets/images/Mquatro.jpg",Mquatro]];
+var unitWidth = 324;
+var unitHeight = 576;
 TweenLite.defaultEase = Linear.easeNone;
+var Mcanvas = document.querySelector("#canvas-m");
+var mContext = Mcanvas.getContext("2d");
+var mresolution = window.devicePixelRatio || 1;
+var mvw, mvh, mcx, mcy;
 
-var canvas = document.querySelector("#canvas");
-var context = canvas.getContext("2d");
-var resolution = window.devicePixelRatio || 1;
-var vw, vh, cx, cy;
-resize();
 
    
-// window.addEventListener("resize", resize);
+// window.addEventListener("mresize", mresize);
 
 function tweenThis (selectedItem,imgLoc,imgData,start,end, callBackFunc) {
 
     var dummyObject = {
         frame: 0,
-        x: -450 / 2,
-        y: -800 / 2
+        x: -unitWidth / 2,
+        y: -unitHeight / 2
     };
 
 
@@ -118,11 +118,11 @@ function tweenThis (selectedItem,imgLoc,imgData,start,end, callBackFunc) {
         var x = dummyObject.x + s.x;
         var y = dummyObject.y + s.y;
 
-        context.save();
-        context.clearRect(0, 0, vw, vh);
-        context.translate(cx, cy);
-        context.drawImage(sprite, f.x, f.y, f.w, f.h, x, y, f.w, f.h);
-        context.restore();
+        mContext.save();
+        mContext.clearRect(0, 0, mvw, mvh);
+        mContext.translate(mcx, mcy);
+        mContext.drawImage(sprite, f.x, f.y, f.w, f.h, x, y, f.w, f.h);
+        mContext.restore();
     }
 
     function sendBack () {callBackFunc (selectedItem);}
@@ -130,33 +130,33 @@ function tweenThis (selectedItem,imgLoc,imgData,start,end, callBackFunc) {
 } // end of TweenThis  --------------------------
 
 
-function resize() {  
-    vw = 450;
-    vh = 800;
+function mresize() {  
+    mvw = unitWidth;
+    mvh = unitHeight;
         
-    cx = vw / 2;
-    cy = vh / 2;
+    mcx = mvw / 2;
+    mcy = mvh / 2;
 
-    canvas.width  = vw * resolution;
-    canvas.height = vh * resolution;
+    Mcanvas.width  = mvw * mresolution;
+    Mcanvas.height = mvh * mresolution;
 
-    canvas.style.width  = vw + "px";
-    canvas.style.height = vh + "px"; 
+    Mcanvas.style.width  = mvw + "px";
+    Mcanvas.style.height = mvh + "px"; 
 
-    context.scale(resolution, resolution);
+    mContext.scale(mresolution, mresolution);
 }
 
-tweenThis (0,imgList[0][0],imgList[0][1],0,0,undefined);
+tweenThis (0,mImgList[0][0],mImgList[0][1],0,0,undefined);
 
 
 
 function closePanel (itemNumber) {
     showHideHS ("show");
-    var currentCloseBtn = document.getElementById("closeBtn-" + itemNumber);
-    var currentDescription = document.getElementById("d-" + itemNumber);
+    var currentCloseBtn = document.getElementById("m-closeBtn-" + itemNumber);
+    var currentDescription = document.getElementById("m-d-" + itemNumber);
     TweenMax.fromTo([currentDescription,currentCloseBtn],0.3,{alpha:1},{delay:0,autoAlpha:0});
-    tweenThis (selectedHS, imgList[selectedHS][0],imgList[selectedHS][1],imgList[selectedHS][1].length - 1,0,undefined);
-    selectedHS = undefined;
+    tweenThis (MselectedHS, mImgList[MselectedHS][0],mImgList[MselectedHS][1],mImgList[MselectedHS][1].length - 1,0,undefined);
+    MselectedHS = undefined;
 }
 
 
@@ -164,25 +164,25 @@ function openPanel (itemNumber) {
 
     showHideHS ("hide");
 
-    var currentCloseBtn = document.getElementById("closeBtn-" + itemNumber);
+    var currentCloseBtn = document.getElementById("m-closeBtn-" + itemNumber);
     currentCloseBtn.style.visibility = "visible";
     TweenMax.fromTo(currentCloseBtn,0.5,{scale:0.5,alpha:0},{delay:1,alpha:1,scale:1});
 
-    var currentDescription = document.getElementById("d-" + itemNumber);
+    var currentDescription = document.getElementById("m-d-" + itemNumber);
     currentDescription.style.visibility = "visible";
     TweenMax.fromTo(currentDescription,0.5,{alpha:0},{delay:1,alpha:1});
 
-    if (selectedHS == undefined) {
-        selectedHS = itemNumber;
-        tweenThis (selectedHS, imgList[selectedHS][0],imgList[selectedHS][1],0,imgList[selectedHS][1].length - 1,cbfunc);
+    if (MselectedHS == undefined) {
+        MselectedHS = itemNumber;
+        tweenThis (MselectedHS, mImgList[MselectedHS][0],mImgList[MselectedHS][1],0,mImgList[MselectedHS][1].length - 1,cbfunc);
     }
     else {
-        tweenThis (selectedHS, imgList[selectedHS][0],imgList[selectedHS][1],imgList[selectedHS][1].length - 1,0,cbfunc);
+        tweenThis (MselectedHS, mImgList[MselectedHS][0],mImgList[MselectedHS][1],mImgList[MselectedHS][1].length - 1,0,cbfunc);
 
         function cbfunc (whichOne) {
            // console.log("this is done yo " + whichOne);
-            selectedHS = itemNumber;
-            tweenThis (selectedHS, imgList[selectedHS][0],imgList[selectedHS][1],0,imgList[selectedHS][1].length - 1,doNothing);
+            MselectedHS = itemNumber;
+            tweenThis (MselectedHS, mImgList[MselectedHS][0],mImgList[MselectedHS][1],0,mImgList[MselectedHS][1].length - 1,doNothing);
         }
     }
 } // end of OpenPanel
@@ -190,14 +190,14 @@ function openPanel (itemNumber) {
 function showHideHS (whichOne) {
     if (whichOne == "show") {
         for (var i = 0; i < 4; i++) {
-            var tempBtn = document.getElementById("hs-" + i);
+            var tempBtn = document.getElementById("m-hs-" + i);
             tempBtn.style.visibility = "visible";
             TweenMax.fromTo(tempBtn,0.5,{alpha:0,scale:0.5},{delay:1,alpha:1,scale:1});
         }
     }
     else {
         for (var i = 0; i < 4; i++) {
-            var tempBtn = document.getElementById("hs-" + i);
+            var tempBtn = document.getElementById("m-hs-" + i);
             TweenMax.fromTo(tempBtn,0.3,{alpha:1,scale:1},{alpha:0,scale:0,onComplete:hide, onCompleteParams:[tempBtn]});
         }
 
@@ -213,38 +213,40 @@ function doNothing () {
     //console.log("what the ...");
 }
 
+function startMobile () {
+    $( document ).ready(function() {
 
-$( document ).ready(function() {
-
-    var promises = [];
-    var preload = ["./assets/images/uno.jpg","./assets/images/dos.jpg","./assets/images/tres.jpg","./assets/images/quatro.jpg"];
-
-    for (var i = 0; i < preload.length; i++) {
-    (function(url, promise) {
-        var img = new Image();
-        img.onload = function() {promise.resolve();};
-        img.src = url;
-    })(preload[i], promises[i] = $.Deferred());
-    }
-    $.when.apply($, promises).done(function() {
-    letsGetStarted ();
-    });
-
-    function letsGetStarted () {
-        document.getElementById("interactive-container").style.display = "block";
-
-        $( "#hs-0" ).click(function() {openPanel(0);});
-        $( "#hs-1" ).click(function() {openPanel(1);});
-        $( "#hs-2" ).click(function() {openPanel(2);});
-        $( "#hs-3" ).click(function() {openPanel(3);});
+        var promises = [];
     
-        $( "#closeBtn-0" ).click(function() {closePanel (0);});
-        $( "#closeBtn-1" ).click(function() {closePanel (1);});
-        $( "#closeBtn-2" ).click(function() {closePanel (2);});
-        $( "#closeBtn-3" ).click(function() {closePanel (3);});
-    }
+        for (var i = 0; i < mImgList.length; i++) {
+        (function(url, promise) {
+            var img = new Image();
+            img.onload = function() {promise.resolve();};
+            img.src = url;
+        })(mImgList[i][0], promises[i] = $.Deferred());
+        }
+        $.when.apply($, promises).done(function() {
+        letsGetStarted ();
+        });
+    
+        function letsGetStarted () {
+            document.getElementById("m-interactive-container").style.display = "block";
+            mresize();
+            
+            $( "#m-hs-0" ).click(function() {openPanel(0);});
+            $( "#m-hs-1" ).click(function() {openPanel(1);});
+            $( "#m-hs-2" ).click(function() {openPanel(2);});
+            $( "#m-hs-3" ).click(function() {openPanel(3);});
+        
+            $( "#m-closeBtn-0" ).click(function() {closePanel (0);});
+            $( "#m-closeBtn-1" ).click(function() {closePanel (1);});
+            $( "#m-closeBtn-2" ).click(function() {closePanel (2);});
+            $( "#m-closeBtn-3" ).click(function() {closePanel (3);});
+        }
+    
+    });    
+}
 
-});
-
+startMobile ();
 
 
