@@ -44,34 +44,6 @@
 		"oAP": "\/build\/assets\/fonts\/Gotham-Book.woff2",
 		"oF": 0
 		},
-	"\/app\/assets\/fonts\/Gotham-Medium.eot": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/build\/assets\/fonts\/Gotham-Medium.eot",
-		"oF": 0
-		},
-	"\/app\/assets\/fonts\/Gotham-Medium.ttf": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/build\/assets\/fonts\/Gotham-Medium.ttf",
-		"oF": 0
-		},
-	"\/app\/assets\/fonts\/Gotham-Medium.woff": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/build\/assets\/fonts\/Gotham-Medium.woff",
-		"oF": 0
-		},
-	"\/app\/assets\/fonts\/Gotham-Medium.woff2": {
-		"cB": 0,
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/build\/assets\/fonts\/Gotham-Medium.woff2",
-		"oF": 0
-		},
 	"\/app\/assets\/images\/cloneBtn.png": {
 		"ft": 32768,
 		"iS": 7796,
