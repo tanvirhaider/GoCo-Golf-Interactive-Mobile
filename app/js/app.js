@@ -49,9 +49,8 @@
 */
 
 
-
 var selectedHS = undefined;
-var imgList = [["./assets/images/setUno.jpg",frames],["./assets/images/dos.jpg",dos],["./assets/images/tres.jpg",tres],["./assets/images/quatro.jpg",quatro]];
+var imgList = [["./assets/images/uno.jpg",uno],["./assets/images/dos.jpg",dos],["./assets/images/tres.jpg",tres],["./assets/images/quatro.jpg",quatro]];
 
 TweenLite.defaultEase = Linear.easeNone;
 
@@ -68,8 +67,8 @@ function tweenThis (selectedItem,imgLoc,imgData,start,end, callBackFunc) {
 
     var dummyObject = {
         frame: 0,
-        x: -960 / 2,
-        y: -540 / 2
+        x: -450 / 2,
+        y: -800 / 2
     };
 
 
@@ -132,8 +131,8 @@ function tweenThis (selectedItem,imgLoc,imgData,start,end, callBackFunc) {
 
 
 function resize() {  
-    vw = 960;
-    vh = 540;
+    vw = 450;
+    vh = 800;
         
     cx = vw / 2;
     cy = vh / 2;
@@ -171,7 +170,7 @@ function openPanel (itemNumber) {
 
     var currentDescription = document.getElementById("d-" + itemNumber);
     currentDescription.style.visibility = "visible";
-    TweenMax.fromTo(currentDescription,0.5,{alpha:0,x:"+5"},{delay:1,alpha:1,x:"-5"});
+    TweenMax.fromTo(currentDescription,0.5,{alpha:0},{delay:1,alpha:1});
 
     if (selectedHS == undefined) {
         selectedHS = itemNumber;
@@ -218,7 +217,7 @@ function doNothing () {
 $( document ).ready(function() {
 
     var promises = [];
-    var preload = ["./assets/images/setUno.jpg","./assets/images/dos.jpg","./assets/images/tres.jpg","./assets/images/quatro.jpg"];
+    var preload = ["./assets/images/uno.jpg","./assets/images/dos.jpg","./assets/images/tres.jpg","./assets/images/quatro.jpg"];
 
     for (var i = 0; i < preload.length; i++) {
     (function(url, promise) {

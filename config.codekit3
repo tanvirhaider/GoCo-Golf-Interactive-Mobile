@@ -85,13 +85,13 @@
 		},
 	"\/app\/assets\/images\/dos.jpg": {
 		"ft": 16384,
-		"iS": 506385,
+		"iS": 189410,
 		"jF": 0,
 		"oA": 0,
 		"oAP": "\/build\/assets\/images\/dos.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"\/app\/assets\/images\/hs.png": {
@@ -107,35 +107,35 @@
 		},
 	"\/app\/assets\/images\/quatro.jpg": {
 		"ft": 16384,
-		"iS": 1057391,
+		"iS": 232467,
 		"jF": 0,
 		"oA": 0,
 		"oAP": "\/build\/assets\/images\/quatro.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
-		"q": 100
-		},
-	"\/app\/assets\/images\/setUno.jpg": {
-		"ft": 16384,
-		"iS": 423886,
-		"jF": 0,
-		"oA": 0,
-		"oAP": "\/build\/assets\/images\/setUno.jpg",
-		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"\/app\/assets\/images\/tres.jpg": {
 		"ft": 16384,
-		"iS": 635091,
+		"iS": 193390,
 		"jF": 0,
 		"oA": 0,
 		"oAP": "\/build\/assets\/images\/tres.jpg",
 		"oF": 0,
 		"oIPL": 0,
-		"opt": 0,
+		"opt": 1,
+		"q": 100
+		},
+	"\/app\/assets\/images\/uno.jpg": {
+		"ft": 16384,
+		"iS": 181291,
+		"jF": 0,
+		"oA": 0,
+		"oAP": "\/build\/assets\/images\/uno.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 1,
 		"q": 100
 		},
 	"\/app\/index.html": {
